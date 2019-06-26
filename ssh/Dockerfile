@@ -7,6 +7,7 @@ LABEL RUN='docker run --name ssh -d -p 2200:22 $IMAGE'
 EXPOSE 22
 
 RUN dnf -y update && dnf -y install openssh-server passwd && dnf clean all
+RUN echo "root:root" | chpasswd
 
 COPY entrypoint.sh /entrypoint.sh
 
