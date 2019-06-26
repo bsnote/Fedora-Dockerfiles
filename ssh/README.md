@@ -2,6 +2,10 @@
 
 ## Building
 
+When building on Windows platform, make sure `entrypoint.sh` has LF line endings:
+
+	dos2unix entrypoint.sh
+
 Copy the sources to your docker host and build the container:
 
 	# docker build --rm -t <username>/ssh .
